@@ -120,7 +120,8 @@ exports.getBookByGenre = async (req, res) => {
     };
 
     res.status(200).json({
-      message: 'Book below'
+      message: 'Book below',
+      data: book
     })
   } catch (error) {
     console.log(error);
@@ -143,7 +144,8 @@ exports.getBookByPublicationYear = async (req, res) => {
     };
 
     res.status(200).json({
-      message: 'Book below'
+      message: 'Book below',
+      data: book
     })
   } catch (error) {
     console.log(error);
@@ -171,7 +173,8 @@ exports.getBookByPublicationYearAndGenre = async (req, res) => {
     };
 
     res.status(200).json({
-      message: 'Book below'
+      message: 'Book below',
+      data: book
     })
   } catch (error) {
     console.log(error);
