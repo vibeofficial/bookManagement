@@ -241,8 +241,9 @@ router.get('/book/:bookId', getBook);
  *         required: true
  *         description: The genre of the book to retrieve (e.g., "Science Fiction")
  *         schema:
- *           type: string
- *           example: "Science Fiction"
+ *           Book:
+ *             type: string
+ *             example: "Science Fiction"
  *     responses:
  *       200:
  *         description: Book retrieved successfully
@@ -254,8 +255,6 @@ router.get('/book/:bookId', getBook);
  *                 message:
  *                   type: string
  *                   example: "Book below"
- *                 data:
- *                   $ref: '#/components/schemas/Book'
  *       404:
  *         description: Book not found
  *         content:
@@ -292,9 +291,10 @@ router.get('/genre', getBookByGenre);
  *       - in: query
  *         name: year
  *         schema:
- *           type: string
- *         required: true
- *         description: The publication year to search for (e.g. "2024")
+ *           Book:
+ *             type: string
+ *           required: true
+ *           description: The publication year to search for (e.g. "2024")
  *     responses:
  *       200:
  *         description: Book retrieved successfully.
@@ -306,8 +306,6 @@ router.get('/genre', getBookByGenre);
  *                 message:
  *                   type: string
  *                   example: "Book below"
- *                 data:
- *                   $ref: '#/components/schemas/Book'
  *       404:
  *         description: No book found for the specified year.
  *         content:
@@ -345,14 +343,16 @@ router.get('/year', getBookByPublicationYear);
  *         name: year
  *         required: true
  *         schema:
- *           type: string
- *         description: Publication year of the book (e.g., "Mon May 20 2024")
- *       - in: query
- *         name: genre
- *         required: true
+ *           Book:
+ *             type: string
+ *           description: Publication year of the book (e.g., "Mon May 20 2024")
+ *         - in: query
+ *           name: genre
+ *           required: true
  *         schema:
- *           type: string
- *         description: Genre of the book (e.g., "Science Fiction")
+ *           Book:
+ *             type: string
+ *           description: Genre of the book (e.g., "Science Fiction")
  *     responses:
  *       200:
  *         description: Book found successfully.
@@ -364,8 +364,6 @@ router.get('/year', getBookByPublicationYear);
  *                 message:
  *                   type: string
  *                   example: "Book below"
- *                 data:
- *                   $ref: '#/components/schemas/Book'
  *       404:
  *         description: Book not found.
  *         content:
